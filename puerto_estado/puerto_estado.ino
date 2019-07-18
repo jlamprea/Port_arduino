@@ -1,9 +1,9 @@
 // Leer el estado de un pin de salida del arduino.
 
-bool valorpin = 0;// variable donde se guarda el estado del pin. Es este caso es el 13 conde hay Led.
+bool valorpin = 0;// variable donde se guarda el estado del pin. Es este caso es el pin 13 donde hay Led.
 
 void setup() {
-  // put your setup code here, to run once:
+
 pinMode(13,OUTPUT);
 pinMode(3,INPUT_PULLUP);
 Serial.begin(9600);
@@ -11,10 +11,10 @@ Serial.begin(9600);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+
 digitalWrite(13,1);
 
-valorpin = bitRead(PORTB,5);// lee el registro de salida del puertoB donde esta el pin 13. Bit 5. el bit0 es el pin 8
+valorpin = bitRead(PORTB,5);// lee el registro de salida del puertoB PORTB donde esta el pin 13. Bit 5. el bit0 es el pin 8 hay PORTC y PORTD para el resto de puertos
 
 if (valorpin != 0){
 Serial.println(" valor 1 del pin led 13");// se imprime el valor del estado de la variable
